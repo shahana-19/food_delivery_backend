@@ -1,0 +1,32 @@
+
+
+services:
+  web:
+    build: .
+    container_name: food_delivery_backend
+    command: python manage.py runserver 0.0.0.0:8600
+    volumes:
+      - .:/app
+    ports:
+      - "8600:8600"
+    env_file:
+      - .env
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    container_name: food_delivery_db
+    restart: always
+    environment:
+      POSTGRES_DB: food_delivery
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data/
+
+volumes:
+  pgdata:
+
