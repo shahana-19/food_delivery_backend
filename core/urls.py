@@ -32,5 +32,7 @@ urlpatterns = [
     path('v1/logout/', LogoutView.as_view(), name='logout'),
     path('v1/restaurants/', include('restaurants.urls')),  # restaurant endpoints
     path('v1/menu/', include('menu.urls')),  # menu endpoints
+    path('v1/cart/', include('cart.urls')),  # cart endpoints
+    path('v1/orders/', include('orders.urls')),  # order endpoints
 ]
 

@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'common',
     'restaurants',
     'menu',
+    'cart',
+    'orders',
 ]
 AUTH_USER_MODEL = "accounts.User"
 

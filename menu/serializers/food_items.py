@@ -17,5 +17,6 @@ class FoodItemsSerializer(serializers.ModelSerializer):
             "image",
             "is_available",
             "created_at",
+            "updated_at",
         ]
-        read_only_fields = ["id", "created_at"]
+        read_only_fields = ["id", "created_at", "updated_at"]
