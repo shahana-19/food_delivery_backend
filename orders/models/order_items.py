@@ -11,7 +11,7 @@ class OrderItem(BaseModel):
         on_delete=models.CASCADE,
         related_name="items",
     )
-    food_items = models.ForeignKey(
+    food_item = models.ForeignKey(
         FoodItems,
         on_delete=models.CASCADE,
     )
