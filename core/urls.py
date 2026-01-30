@@ -34,5 +34,6 @@ urlpatterns = [
     path('v1/menu/', include('menu.urls')),  # menu endpoints
     path('v1/cart/', include('cart.urls')),  # cart endpoints
     path('v1/orders/', include('orders.urls')),  # order endpoints
+    path('v1/address/', include('address.urls')),  # address endpoints
 ]
 

@@ -30,7 +30,12 @@ class Order(BaseModel):
         default="pending",
     )
     payment_status = models.BooleanField(default=False)
-
+    address = models.ForeignKey(
+    "address.Address",
+    on_delete=models.PROTECT,
+    null=True,
+    blank=True
+)
     class Meta:
         db_table = "orders"
         ordering = ["-created_at"]
