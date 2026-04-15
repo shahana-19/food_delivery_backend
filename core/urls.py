@@ -25,9 +25,15 @@ from accounts.views.users import LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("api-auth/", include("rest_framework.urls")),
     path('v1/auth/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('v1/auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('v1/auth/', include('accounts.urls')),  # custom register/profile endpoints
     path('v1/logout/', LogoutView.as_view(), name='logout'),
+    path('v1/restaurants/', include('restaurants.urls')),  # restaurant endpoints
+    path('v1/menu/', include('menu.urls')),  # menu endpoints
+    path('v1/cart/', include('cart.urls')),  # cart endpoints
+    path('v1/orders/', include('orders.urls')),  # order endpoints
+    path('v1/address/', include('address.urls')),  # address endpoints
 ]
 
